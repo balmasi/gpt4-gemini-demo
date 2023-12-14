@@ -76,7 +76,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import { mdiPlay, mdiStop } from '@mdi/js'
 
 import SMTDWebcam from '@/components/Webcam/SMTD-Webcam.vue'
@@ -100,17 +100,17 @@ const handleFinalSpeech = (text) => {
   if (webcamComponent.value) {
     compositeImageUrl.value = webcamComponent.value.getCompositeImage()
   }
-}
+};
 
-const handleLanguageSelected = ({ name, code }) => {
+const handleLanguageSelected = ({ code }) => {
   languageCode.value = code
-}
+};
 
-const handleTtsFinished = (e) => {
+const handleTtsFinished = () => {
   requestInFlight.value = false
-}
+};
 
-const isApiKeyValid = () => apiKey.value.length == 51 && apiKey.value.startsWith('sk-')
+const isApiKeyValid = () => apiKey.value.length == 51 && apiKey.value.startsWith('sk-');
 </script>
 
 <style scoped>

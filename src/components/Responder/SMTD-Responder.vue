@@ -10,7 +10,7 @@
 
 <script  lang="ts">
 import { ref, watch } from 'vue'
-import { computeTextFromImage, computeTextFromImageMock } from '@/lib/openai'
+import { computeTextFromImage } from '@/lib/openai'
 import { makeTextToSpeechOpenai, makeTextToSpeechBrowser } from '@/lib/tts'
 
 export default {

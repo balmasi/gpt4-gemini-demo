@@ -50,7 +50,7 @@ export default {
           startCapture()
         } catch (error) {
           errorMessage.value = 'Error accessing the webcam.'
-          errorSnackbar = true
+          errorSnackbar.value = true
         }
       }
     })

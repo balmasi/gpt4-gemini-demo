@@ -42,7 +42,7 @@ function initializeRecognition() {
   recognitionService.onsoundstart = () => console.info('Sound Start: Some sound is being received')
   recognitionService.onsoundend = () => console.info('Sound End: Sound has stopped being received')
   recognitionService.onspeechstart = () => console.info('Speech Start: Speech has been detected')
-  recognitionService.onspeechend = (e) =>
+  recognitionService.onspeechend = () =>
     console.info('Speech End: Speech has stopped being detected')
 
   return recognitionService
@@ -76,10 +76,7 @@ watch(
 )
 
 watch(
-  () => props.lang,
-  (newLang) => {
-    restartRecognition()
-  }
+  () => props.lang, restartRecognition
 )
 
 onMounted(() => {
