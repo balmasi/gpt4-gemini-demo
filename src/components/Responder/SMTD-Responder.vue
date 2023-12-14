@@ -33,11 +33,16 @@ export default {
         : makeTextToSpeechBrowser(props.lang)
 
       if (props.finalSpeechText && props.compositeImageUrl) {
-        responseText.value = await computeTextFromImage(
-          props.finalSpeechText,
-          props.compositeImageUrl,
-          props.apiKey
-        )
+        try {
+          responseText.value = await computeTextFromImage(
+            props.finalSpeechText,
+            props.compositeImageUrl,
+            props.apiKey
+          )
+        } catch (err) {
+          errorSnackbar.value = true
+          errorMessage.value = `There was an issue interpreting the image. ${err.message}`;
+        }
         console.log('OpenAI Response:', responseText.value)
         try {
           await tts(responseText.value)

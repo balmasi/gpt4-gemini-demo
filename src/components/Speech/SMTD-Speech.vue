@@ -70,7 +70,7 @@ watch(
       startRecognition()
     } else if (recognition) {
       // Not Disabled -> Disabled
-      recognition.abort()
+      recognition.stop()
     }
   }
 )
