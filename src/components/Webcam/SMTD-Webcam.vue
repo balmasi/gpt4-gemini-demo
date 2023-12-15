@@ -79,14 +79,16 @@ export default {
 
 <style>
 video {
-  border-radius: 30px;
-  max-width: 500px;
+  border-radius: 25px;
+  max-width: 1000px;
+  width:100%;
+
 }
 
 .debug-image {
   display: block;
   margin: 20px auto;
-  height: 30px;
+  height: 300px;
   margin-top: 15px;
 }
 </style>

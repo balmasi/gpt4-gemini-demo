@@ -7,6 +7,11 @@
             <header>
               <h1>NOT Gemini</h1>
               <p>Gemini Real-time Demo, but with <b>GPT-4 Vision</b></p>
+
+              <a id="linkedin" target="_blank" href="https://www.linkedin.com/in/balmasi/">
+                <v-icon :icon="mdiLinkedin"></v-icon>
+                <v-tooltip activator="parent" >Work with me</v-tooltip>
+              </a>
             </header>
           </v-col>
           <v-col cols="12" class="text-center">
@@ -52,10 +57,10 @@
               type="password"
             ></v-text-field>
           </v-col>
-          <v-col cols="12" sm="4">
+          <v-col cols="12" sm="3">
             <SMTDLanguageSelector @language-selected="handleLanguageSelected" />
           </v-col>
-          <v-col cols="12" sm="4" class="d-block align-start">
+          <v-col cols="12" sm="5" class="d-block align-start">
             <v-switch
               color="primary"
               v-model="useOpenaiTTS"
@@ -77,7 +82,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { mdiPlay, mdiStop } from '@mdi/js'
+import { mdiPlay, mdiStop, mdiLinkedin } from '@mdi/js'
 
 import SMTDWebcam from '@/components/Webcam/SMTD-Webcam.vue'
 import SMTDSpeech from '@/components/Speech/SMTD-Speech.vue'
@@ -119,4 +124,12 @@ header {
   margin-bottom: 40px;
   text-align: center;
 }
+
+#linkedin {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #0077b5;
+}
+
 </style>
